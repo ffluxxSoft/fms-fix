@@ -1,0 +1,873 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Falcon Mobile Services — heavy equipment repair, welding, fabrication</title>
+<meta name="description" content="Mobile heavy equipment repair, ag tractor and semi truck service, welding, fabrication, sandblasting, and tire service. We come to your equipment.">
+<meta name="theme-color" content="#EFEDE6">
+<meta name="color-scheme" content="light">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/favicon.ico" sizes="32x32">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="canonical" href="https://fms-fix.com/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Falcon Mobile Services">
+<meta property="og:title" content="Falcon Mobile Services">
+<meta property="og:description" content="Heavy equipment repair, welding, fabrication, sandblasting, and mobile tire service — on site, where your equipment sits.">
+<meta property="og:url" content="https://fms-fix.com/">
+<meta property="og:image" content="https://fms-fix.com/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Falcon Mobile Services business card: a falcon in flight, a welding torch, and the phone numbers.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Falcon Mobile Services">
+<meta name="twitter:description" content="Heavy equipment repair, welding, fabrication, sandblasting, and mobile tire service — on site, where your equipment sits.">
+<meta name="twitter:image" content="https://fms-fix.com/og.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+/* ==========================================================
+   Falcon Mobile Services
+   Palette and type taken from the printed business card:
+   bone card stock, black letterpress serif, ember red accent.
+   ========================================================== */
+:root{
+  --paper:#EFEDE6;
+  --panel:#E4E1D7;
+  --ink:#141414;
+  --steel:#6B6760;
+  --rule:#C9C5B8;
+  --ember:#C0271B;
+
+  --serif:"Libre Baskerville", Georgia, serif;
+  --sans:"Barlow", system-ui, -apple-system, sans-serif;
+
+  --nav-h:64px;
+  --bar-h:40px;
+  --pad:clamp(20px, 5vw, 64px);
+  --maxw:1180px;
+}
+
+/* Some preview panes drop or scope html/body backgrounds and leave their own
+   dark canvas showing through, which buries dark text. This element is an
+   actual painted surface behind the page, so the colour cannot be lost. */
+.page-bg{position:fixed;inset:0;background:#EFEDE6;z-index:-1;}
+
+*{box-sizing:border-box;}
+/* the page is printed-card light; say so explicitly, or a browser or
+   embed in dark mode will invert it and bury the text */
+:root{color-scheme:light;}
+html{background:#EFEDE6 !important;scroll-behavior:smooth;scroll-padding-top:calc(var(--nav-h) + var(--bar-h) + 12px);}
+body{
+  margin:0;background:#EFEDE6 !important;color:#141414 !important;
+  font-family:var(--sans);font-size:17px;line-height:1.55;
+  -webkit-font-smoothing:antialiased;overflow-x:hidden;
+}
+a{color:inherit;}
+:focus-visible{outline:2.5px solid var(--ember);outline-offset:3px;}
+.wrap{max-width:var(--maxw);margin:0 auto;padding-left:var(--pad);padding-right:var(--pad);}
+
+h1,h2,h3{font-family:var(--serif);font-weight:700;letter-spacing:-.01em;}
+
+/* ---------------- header ---------------- */
+.site-head{position:sticky;top:0;z-index:60;background:var(--paper);}
+.head-row{
+  display:flex;align-items:center;justify-content:space-between;gap:20px;
+  height:var(--nav-h);
+}
+.lockup{display:flex;align-items:center;gap:10px;text-decoration:none;}
+.lockup .mark{width:48px;height:33px;flex:none;display:block;}
+.lockup .name{
+  font-family:var(--serif);font-weight:700;font-size:15px;line-height:1.05;
+}
+.lockup .sub{
+  display:block;font-family:var(--sans);font-weight:500;font-size:10.5px;
+  color:var(--ember);letter-spacing:.02em;margin-top:2px;
+}
+.site-nav{display:flex;align-items:center;gap:22px;}
+.site-nav a{
+  font-weight:500;font-size:14.5px;color:var(--steel);text-decoration:none;
+  padding-bottom:2px;border-bottom:2px solid transparent;
+}
+.site-nav a:hover{color:var(--ink);border-bottom-color:var(--ember);}
+.call-btn{
+  background:var(--ember);color:#fff;text-decoration:none;font-weight:600;
+  font-size:14.5px;padding:9px 16px;border-radius:2px;white-space:nowrap;
+}
+.call-btn:hover{background:#a11f15;}
+@media (max-width:760px){ .site-nav a{display:none;} }
+
+/* ---------------- progress torch ---------------- */
+.torchbar{position:relative;height:var(--bar-h);width:100%;background:var(--paper);}
+/* the neck and nozzle hang below the header, the way they do on the card */
+.torchbar svg{position:absolute;left:0;top:0;width:100%;height:auto;display:block;overflow:visible;pointer-events:none;}
+@media (max-width:760px){ :root{--bar-h:28px;--nav-h:58px;} }
+
+/* ---------------- hero ---------------- */
+.hero{padding:clamp(86px,10vw,126px) 0 clamp(34px,5vw,60px);}
+.hero-grid{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,.85fr);gap:clamp(28px,5vw,64px);align-items:start;}
+@media (max-width:900px){ .hero-grid{grid-template-columns:1fr;} }
+
+.brandblock{display:flex;align-items:center;gap:18px;margin-bottom:26px;}
+.brandblock .mark{width:clamp(74px,10vw,104px);height:auto;aspect-ratio:150/102;flex:none;}
+.brandblock .words{min-width:0;}
+.brandblock .big{
+  font-family:var(--serif);font-weight:700;
+  font-size:clamp(24px,4.4vw,40px);line-height:1.02;margin:0;
+}
+.brandblock .tag{
+  font-size:clamp(14px,1.9vw,19px);color:var(--ember);font-weight:500;margin:6px 0 0;
+}
+
+.hero h1{
+  font-size:clamp(28px,4.4vw,46px);line-height:1.16;margin:0 0 16px;max-width:19ch;
+}
+.hero .lede{font-size:clamp(16.5px,1.8vw,19px);color:#332F29;max-width:52ch;margin:0 0 26px;}
+.hero-actions{display:flex;gap:12px;flex-wrap:wrap;}
+
+.btn{
+  display:inline-block;font-family:var(--sans);font-weight:600;font-size:16px;
+  padding:14px 22px;border-radius:2px;cursor:pointer;text-decoration:none;border:2px solid var(--ink);
+}
+.btn-solid{background:var(--ember);border-color:var(--ember);color:#fff;}
+.btn-solid:hover{background:#a11f15;border-color:#a11f15;}
+.btn-line{background:transparent;color:var(--ink);}
+.btn-line:hover{background:var(--ink);color:var(--paper);}
+
+/* contact panel */
+.callcard{background:var(--panel);border:1px solid var(--rule);padding:clamp(20px,3vw,28px);}
+.callcard h2{font-size:19px;margin:0 0 14px;}
+.numrow{display:block;text-decoration:none;padding:11px 0;border-top:1px solid var(--rule);}
+.numrow:first-of-type{border-top:0;padding-top:0;}
+.numrow .what{font-size:13.5px;color:var(--steel);}
+.numrow .num{display:block;font-family:var(--serif);font-weight:700;font-size:clamp(21px,2.8vw,26px);margin-top:2px;}
+.numrow:hover .num{color:var(--ember);}
+.callcard .fine{font-size:14px;color:var(--steel);margin:14px 0 0;padding-top:14px;border-top:1px solid var(--rule);}
+
+/* ---------------- section frame ---------------- */
+.band{padding:clamp(46px,6vw,80px) 0;border-top:1px solid var(--rule);}
+.band-head{max-width:58ch;margin-bottom:clamp(26px,4vw,40px);}
+.band-head h2{font-size:clamp(24px,3.4vw,36px);margin:0 0 10px;}
+.band-head p{color:var(--steel);margin:0;font-size:16.5px;}
+
+/* ---------------- services ---------------- */
+.svc{
+  display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);
+  gap:clamp(14px,4vw,48px);padding:24px 0;border-top:1px solid var(--rule);
+}
+.svc:first-of-type{border-top:1px solid var(--ink);}
+.svc:last-of-type{border-bottom:1px solid var(--rule);}
+@media (max-width:760px){ .svc{grid-template-columns:1fr;gap:8px;} }
+.svc h3{font-size:clamp(20px,2.5vw,26px);margin:0;}
+.svc p{margin:0 0 10px;font-size:16.5px;}
+.svc ul{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:6px 16px;}
+.svc li{font-size:14.5px;color:var(--steel);display:flex;align-items:baseline;gap:7px;}
+.svc li::before{content:"";width:5px;height:5px;background:var(--ember);border-radius:50%;flex:none;}
+
+/* ---------------- rates ---------------- */
+.rates-grid{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);gap:clamp(28px,5vw,60px);align-items:start;}
+@media (max-width:900px){ .rates-grid{grid-template-columns:1fr;} }
+.rate-group{margin:0 0 26px;}
+.rate-group h3{font-size:17px;margin:0 0 6px;}
+.rate-line{display:flex;align-items:baseline;gap:8px;padding:9px 0;border-top:1px solid var(--rule);}
+.rate-line .label{font-size:16px;}
+.rate-line .lead{flex:1;border-bottom:1px dotted var(--rule);transform:translateY(-4px);min-width:16px;}
+.rate-line .price{font-family:var(--serif);font-weight:700;font-size:17px;white-space:nowrap;}
+.terms{background:var(--panel);border-left:3px solid var(--ember);padding:20px 22px;}
+.terms h3{font-size:17px;margin:0 0 10px;}
+.terms ul{margin:0;padding-left:18px;color:var(--steel);font-size:15.5px;}
+.terms li{margin-bottom:7px;}
+
+/* ---------------- quote ---------------- */
+.quote-grid{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,.8fr);gap:clamp(28px,5vw,56px);align-items:start;}
+@media (max-width:900px){ .quote-grid{grid-template-columns:1fr;} }
+.fields{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+@media (max-width:620px){ .fields{grid-template-columns:1fr;} }
+.f-full{grid-column:1 / -1;}
+label{display:block;font-size:14px;font-weight:600;margin-bottom:5px;}
+input[type=text],input[type=tel],input[type=email],select,textarea{
+  width:100%;font-family:var(--sans);font-size:16px;color:var(--ink);
+  background:#fff;border:1px solid var(--rule);border-radius:2px;padding:11px 12px;
+}
+input:focus,select:focus,textarea:focus{outline:none;border-color:var(--ember);box-shadow:0 0 0 2px rgba(192,39,27,.15);}
+input.bad,textarea.bad{border-color:var(--ember);background:#fdf3f2;}
+textarea{min-height:120px;resize:vertical;}
+.checks{display:flex;flex-wrap:wrap;gap:8px;}
+.checks label{
+  display:inline-flex;align-items:center;gap:8px;margin:0;font-weight:500;font-size:14.5px;
+  border:1px solid var(--rule);background:#fff;border-radius:2px;padding:9px 12px;cursor:pointer;
+}
+.checks label:has(input:checked){border-color:var(--ember);background:#fff;box-shadow:inset 0 0 0 1px var(--ember);}
+.checks input{accent-color:var(--ember);margin:0;}
+.form-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:22px;align-items:center;}
+.form-msg{margin:14px 0 0;font-size:15px;min-height:22px;}
+.form-msg.err{color:var(--ember);font-weight:500;}
+.form-msg.ok{color:#1d6b3a;font-weight:500;}
+.quote-aside h3{font-size:18px;margin:0 0 10px;}
+.quote-aside p{color:var(--steel);font-size:15.5px;margin:0 0 16px;}
+.quote-aside .want{margin:0;padding-left:18px;color:var(--steel);font-size:15.5px;}
+.quote-aside .want li{margin-bottom:7px;}
+
+/* ---------------- contact ---------------- */
+.contact-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:28px;}
+.contact-grid h3{font-size:16px;margin:0 0 6px;}
+.contact-grid p{margin:0;color:var(--steel);font-size:16px;}
+.contact-grid a{color:var(--ink);text-decoration:none;border-bottom:1px solid var(--rule);}
+.contact-grid a:hover{border-bottom-color:var(--ember);color:var(--ember);}
+
+/* ---------------- footer ---------------- */
+.site-foot{background:var(--ink);color:#DEDACF;padding:34px 0 40px;}
+.foot-grid{display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap;align-items:center;}
+.foot-brand{display:flex;align-items:center;gap:12px;}
+.foot-brand .mark{width:52px;height:35px;}
+.foot-brand .nm{font-family:var(--serif);font-weight:700;font-size:15px;}
+.foot-materials{display:flex;gap:18px;flex-wrap:wrap;font-size:14px;color:#A9A499;}
+.foot-note{font-size:13px;color:#8A857B;}
+
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto;}
+  *{transition:none !important;}
+}
+</style>
+</head>
+<body>
+<div class="page-bg" aria-hidden="true"></div>
+
+<!-- ===== reusable logo mark: the falcon silhouette, flying left to right ===== -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <path id="fms-wing-back" fill="currentColor" fill-rule="evenodd" d="M75.71 79.29 L82.62 76.50 L84.25 76.97 C85.14 77.23 86.66 77.66 87.63 77.92 L89.38 78.40 L88.49 75.74 C88.00 74.28 87.60 72.93 87.60 72.74 C87.60 72.54 86.83 71.79 85.82 71.01 C81.22 67.45 72.32 59.07 67.26 53.56 C64.13 50.14 60.32 45.78 59.01 44.11 C58.87 43.94 58.18 43.07 57.48 42.17 C55.21 39.31 54.14 37.76 52.73 35.26 C51.98 33.92 51.02 32.23 50.61 31.50 C50.19 30.78 49.23 29.09 48.47 27.74 C43.97 19.81 41.46 15.92 41.46 16.85 C41.46 17.44 42.17 20.41 42.82 22.56 C44.38 27.72 46.75 32.75 49.74 37.24 C50.70 38.67 51.43 39.89 51.38 39.95 C51.08 40.25 45.01 33.26 42.30 29.50 C39.20 25.18 38.11 23.09 35.92 17.28 C35.31 15.64 34.02 13.10 33.03 11.59 C31.02 8.49 27.33 5.38 28.24 7.56 C28.35 7.82 28.91 9.31 29.49 10.87 C32.42 18.80 35.87 25.60 40.11 31.81 C40.73 32.70 41.19 33.47 41.14 33.52 C41.01 33.65 38.70 31.21 36.35 28.46 C33.09 24.63 31.09 21.97 29.88 19.82 C28.93 18.13 26.94 15.16 25.86 13.82 C23.49 10.90 19.75 6.91 19.37 6.91 C19.09 6.91 24.15 16.93 25.27 18.60 C26.82 20.91 30.63 25.92 35.24 31.71 C36.80 33.66 38.16 35.38 38.27 35.52 C38.70 36.08 38.21 35.97 37.34 35.33 C36.05 34.37 30.39 29.73 29.06 28.55 C27.66 27.30 23.73 23.33 19.07 18.48 C15.78 15.05 11.74 11.56 11.42 11.88 C11.31 12.00 11.45 12.20 13.94 15.48 C16.12 18.36 16.89 19.51 17.33 20.52 C17.95 21.92 19.44 23.57 25.77 29.83 C28.97 32.99 31.45 35.57 31.30 35.57 C30.71 35.57 21.16 29.24 17.83 26.65 C12.84 22.76 10.20 21.00 7.36 19.67 C4.77 18.45 4.75 18.73 7.24 21.04 C8.45 22.15 10.54 24.17 11.89 25.51 C13.70 27.32 15.18 28.55 17.66 30.28 C24.26 34.91 26.40 36.67 25.96 37.11 C25.90 37.17 24.95 36.79 23.85 36.27 C13.75 31.47 5.89 28.35 1.82 27.53 C-0.23 27.11 -0.38 27.23 1.25 27.98 C7.54 30.86 12.24 33.47 13.90 35.00 C15.13 36.14 14.96 36.20 12.49 35.55 C8.89 34.59 6.00 33.96 5.85 34.11 C5.76 34.20 7.09 35.31 8.79 36.59 C13.86 40.40 17.35 44.09 15.55 43.75 C14.61 43.57 14.90 44.15 17.16 46.95 C17.84 47.79 19.01 49.12 19.77 49.92 C20.52 50.72 21.14 51.42 21.14 51.48 C21.14 51.70 19.83 52.03 18.99 52.03 C18.51 52.03 18.06 52.11 18.00 52.21 C17.80 52.54 24.47 57.33 26.58 58.37 C27.27 58.72 27.85 59.08 27.85 59.18 C27.85 59.48 25.10 60.37 24.17 60.37 C23.65 60.37 23.75 60.54 25.30 62.31 C32.55 70.58 38.95 76.79 44.53 80.96 L46.07 82.11 L57.44 82.10 L68.80 82.08 L75.71 79.29 Z M88.31 70.51 C88.51 69.96 89.63 66.59 89.63 66.53 C89.63 66.49 88.35 66.46 86.79 66.46 C85.22 66.46 83.94 66.54 83.94 66.63 C83.94 66.72 84.65 67.47 85.52 68.30 C88.02 70.70 88.19 70.83 88.31 70.51 Z M82.72 58.92 L82.72 52.60 L82.16 52.74 C81.15 52.99 79.38 53.76 79.37 53.94 C79.37 54.20 79.87 54.43 80.74 54.57 C81.19 54.64 81.50 54.81 81.50 54.97 C81.50 55.22 79.11 56.70 77.66 57.34 C77.31 57.49 77.03 57.76 77.03 57.93 C77.04 58.40 82.28 65.24 82.64 65.24 C82.69 65.24 82.72 62.40 82.72 58.92 Z"/>
+    <path id="fms-body" fill="currentColor" fill-rule="evenodd" d="M87.30 101.92 C89.11 101.81 93.62 101.17 95.12 100.81 C98.25 100.05 100.96 99.12 103.35 97.96 C104.55 97.38 105.93 96.89 106.71 96.75 C107.43 96.63 108.53 96.44 109.15 96.33 C116.66 95.05 121.26 93.70 125.11 91.65 C127.84 90.20 129.44 89.75 131.40 89.89 C133.57 90.05 134.39 90.40 134.61 91.26 L134.79 91.97 L135.09 91.26 C135.57 90.13 135.52 87.79 134.99 86.94 C134.38 85.95 133.17 85.18 131.61 84.77 C130.77 84.55 130.16 84.27 129.98 84.00 C128.57 81.99 122.58 79.70 117.31 79.15 C115.71 78.99 115.60 78.75 116.37 77.25 C118.96 72.27 122.44 67.94 126.22 65.02 C127.11 64.32 127.82 63.73 127.80 63.70 C127.77 63.68 118.05 64.24 106.20 64.95 C94.35 65.67 84.38 66.26 84.04 66.26 C83.47 66.27 83.56 66.38 85.72 68.49 C88.74 71.42 92.47 74.52 95.09 76.27 C96.14 76.97 95.02 76.83 93.50 76.06 C90.54 74.55 86.28 71.53 82.09 67.95 L80.38 66.50 L56.20 67.94 C42.89 68.73 31.97 69.41 31.92 69.46 C31.80 69.55 36.45 74.14 38.82 76.27 C42.86 79.89 46.70 82.69 49.49 84.05 C50.53 84.56 50.98 84.88 50.84 85.01 C50.65 85.21 39.47 88.08 33.74 89.41 C23.16 91.87 18.92 92.77 14.53 93.49 C13.75 93.62 12.61 93.81 12.01 93.92 C11.40 94.02 10.63 94.11 10.30 94.11 C9.40 94.11 9.74 94.29 11.41 94.71 C12.59 95.00 12.81 95.11 12.45 95.23 C11.45 95.54 12.10 95.73 14.18 95.73 C16.43 95.72 18.31 95.48 21.85 94.72 C27.19 93.57 29.91 93.07 31.41 92.96 L33.04 92.83 L33.52 93.52 C36.22 97.42 43.29 99.32 52.69 98.67 C56.27 98.43 56.56 98.44 57.96 98.81 C59.59 99.24 59.87 99.31 63.62 100.05 C66.18 100.57 70.41 101.21 73.98 101.62 C75.91 101.85 85.00 102.05 87.30 101.92 Z"/>
+    <path id="fms-wing-front" fill="currentColor" fill-rule="evenodd" d="M127.44 82.03 C127.44 81.86 124.24 80.61 122.87 80.25 C120.95 79.73 118.87 79.33 117.31 79.16 C116.43 79.06 115.99 78.92 115.91 78.70 C115.69 78.15 117.91 74.29 120.32 71.04 C122.91 67.53 125.26 65.48 130.96 61.73 C134.49 59.40 135.55 58.53 136.06 57.55 C136.22 57.25 137.15 56.22 138.14 55.26 C139.87 53.57 141.25 52.12 142.61 50.58 C144.74 48.16 147.31 43.63 148.36 40.45 C149.72 36.31 149.90 35.20 149.90 30.69 C149.90 26.01 149.67 24.40 148.32 19.72 C147.66 17.42 145.08 11.38 144.76 11.38 C144.66 11.38 144.47 12.12 144.32 13.01 C144.08 14.49 143.70 15.40 143.70 14.49 C143.70 14.29 143.38 12.89 143.00 11.38 C141.64 5.97 139.83 1.58 138.44 0.33 C137.87 -0.19 137.76 0.12 137.65 2.73 C137.55 4.97 137.56 5.02 138.05 5.41 C138.33 5.62 138.67 6.02 138.81 6.28 C139.05 6.74 139.04 6.76 138.55 6.66 C137.89 6.54 137.83 6.73 138.02 8.23 C138.19 9.52 138.23 11.16 138.08 10.47 C138.03 10.24 137.90 9.88 137.80 9.65 C137.70 9.43 137.29 8.35 136.88 7.24 C136.03 4.93 135.40 3.71 134.41 2.49 C133.60 1.49 133.19 1.40 133.02 2.18 C132.96 2.49 132.80 3.14 132.68 3.62 C132.47 4.47 132.54 8.20 132.85 12.20 C133.01 14.33 132.86 14.21 131.91 11.44 C130.36 6.88 128.94 4.80 128.31 6.15 C127.39 8.12 127.31 11.19 127.97 18.85 C128.12 20.48 127.88 20.79 127.48 19.50 C126.70 17.00 124.14 11.86 123.06 10.62 C122.26 9.71 121.86 9.82 121.36 11.09 C120.84 12.44 120.93 19.03 121.52 21.70 C121.77 22.85 121.92 23.88 121.85 23.99 C121.78 24.10 121.31 23.64 120.80 22.97 C119.59 21.36 116.15 18.74 115.75 19.14 C115.32 19.57 115.45 24.21 115.99 27.23 L116.12 27.93 L115.63 27.58 C112.51 25.35 110.73 24.41 110.29 24.77 C109.74 25.24 109.15 26.80 109.15 27.82 C109.15 28.68 109.04 28.95 108.35 29.78 C107.46 30.85 106.84 32.02 106.49 33.25 C106.27 34.02 106.17 34.11 105.17 34.43 C103.70 34.89 101.79 36.90 102.44 37.30 C102.85 37.55 102.62 37.94 101.88 38.29 C99.45 39.42 98.26 40.58 98.13 41.97 C98.08 42.49 97.97 42.59 97.46 42.64 C96.28 42.75 92.98 43.56 92.71 43.81 C92.48 44.02 92.59 44.22 93.37 44.97 C94.90 46.43 94.60 47.15 92.46 47.15 C90.50 47.15 87.15 47.88 85.41 48.69 C83.73 49.46 83.71 49.60 85.18 50.13 C86.35 50.55 87.35 51.35 87.06 51.64 C86.96 51.74 86.10 51.96 85.16 52.14 C84.21 52.32 83.27 52.51 83.08 52.56 C82.75 52.66 82.72 53.15 82.72 59.07 L82.72 65.47 L85.32 68.05 C88.46 71.19 92.21 74.34 95.09 76.27 C95.99 76.87 95.13 76.86 93.85 76.24 C91.02 74.88 86.37 71.62 82.42 68.22 L80.39 66.47 L78.00 66.47 C76.68 66.47 75.62 66.53 75.62 66.62 C75.63 66.70 76.11 68.14 76.69 69.82 L77.74 72.87 L76.68 76.00 C76.09 77.72 75.64 79.16 75.67 79.20 C75.71 79.23 77.28 78.64 79.17 77.89 L82.60 76.51 L92.57 79.31 L102.54 82.11 L114.99 82.11 C121.84 82.11 127.44 82.08 127.44 82.03 Z"/>
+    <!-- wings are separate so they can beat. Each one overlaps the body by more
+         than the beat can rotate it, so the silhouette never opens a seam. -->
+    <g id="fms-mark">
+      <use href="#fms-wing-back"/><use href="#fms-body"/><use href="#fms-wing-front"/>
+    </g>
+  </defs>
+</svg>
+
+<header class="site-head">
+  <div class="wrap head-row">
+    <a class="lockup" href="#top">
+      <svg class="mark" viewBox="0 0 150 102" style="color:var(--ink)" aria-hidden="true"><use href="#fms-mark"/></svg>
+      <span class="name">FALCON MOBILE SERVICES
+        <span class="sub">Fabrication and Welding</span>
+      </span>
+    </a>
+    <nav class="site-nav">
+      <a href="#services">Services</a>
+      <a href="#rates">Rates</a>
+      <a href="#quote">Get a quote</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <a class="call-btn" href="tel:+17608038620">Call 760-803-8620</a>
+  </div>
+
+  <div class="torchbar" id="torchbar" role="progressbar" aria-label="Page progress"
+       aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+    <svg id="torchSvg" aria-hidden="true">
+      <defs><clipPath id="revealClip"><rect id="revealRect" x="0" y="0" width="0" height="200"/></clipPath></defs>
+      <g clip-path="url(#revealClip)"><g id="torchLive"></g></g>
+      <g id="sparks"></g>
+      <g id="falconG">
+        <g style="color:#EFEDE6" stroke="#EFEDE6" stroke-width="9" stroke-linejoin="round">
+          <g class="wb"><use href="#fms-wing-back"/></g><use href="#fms-body"/><g class="wf"><use href="#fms-wing-front"/></g>
+        </g>
+        <g style="color:#141414" stroke="#141414" stroke-width="1">
+          <g class="wb"><use href="#fms-wing-back"/></g><use href="#fms-body"/><g class="wf"><use href="#fms-wing-front"/></g>
+        </g>
+      </g>
+    </svg>
+  </div>
+</header>
+
+<main id="top">
+
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <div class="brandblock">
+          <svg class="mark" viewBox="0 0 150 102" style="color:var(--ink)" aria-label="Falcon Mobile Services"><use href="#fms-mark"/></svg>
+          <div class="words">
+            <p class="big">FALCON MOBILE SERVICES</p>
+            <p class="tag">Fabrication and Welding</p>
+          </div>
+        </div>
+        <h1>Your equipment breaks where it sits. We bring the shop to it.</h1>
+        <p class="lede">Ted Sowko has been repairing heavy equipment, ag tractors and semi trucks
+          on site for decades — plus welding, fabrication, sandblasting and tire service from the
+          same truck. One call covers the diagnosis and the fix.</p>
+        <div class="hero-actions">
+          <a class="btn btn-solid" href="#quote">Request a quote</a>
+          <a class="btn btn-line" href="sms:+17608038620">Text a photo of the problem</a>
+        </div>
+      </div>
+
+      <div class="callcard">
+        <h2>Reach Ted directly</h2>
+        <a class="numrow" href="tel:+17608038620">
+          <span class="what">Cell — fastest, texts welcome</span>
+          <span class="num">760-803-8620</span>
+        </a>
+        <a class="numrow" href="tel:+17607898620">
+          <span class="what">Office</span>
+          <span class="num">760-789-8620</span>
+        </a>
+        <p class="fine">Serving <span data-fill="area">San Diego County and surrounding areas</span>.
+          On site <span data-fill="hours">Monday to Saturday, 7am to 6pm</span>, with emergency calls by arrangement.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="band" id="services">
+    <div class="wrap">
+      <div class="band-head">
+        <h2>What we do</h2>
+        <p>Everything below happens at your yard, job site, ranch or roadside. Nothing needs to be
+          hauled in first.</p>
+      </div>
+
+      <article class="svc">
+        <h3>Heavy equipment repair</h3>
+        <div>
+          <p>Field diagnosis and repair on excavators, loaders, backhoes, dozers and skid steers.</p>
+          <ul><li>Hydraulics</li><li>Engines and cooling</li><li>Brakes and final drives</li><li>Electrical</li><li>Undercarriage</li></ul>
+        </div>
+      </article>
+
+      <article class="svc">
+        <h3>Ag tractor and semi truck</h3>
+        <div>
+          <p>Tractors, implements, trailers and over-the-road trucks kept running through the season.</p>
+          <ul><li>Air systems</li><li>Clutches and drivelines</li><li>PTO and hitches</li><li>Preventive service</li></ul>
+        </div>
+      </article>
+
+      <article class="svc">
+        <h3>Welding</h3>
+        <div>
+          <p>Structural and repair welding on site, in stainless, aluminum and steel.</p>
+          <ul><li>MIG</li><li>TIG</li><li>Stick</li><li>Cracked frames and buckets</li><li>Broken castings</li></ul>
+        </div>
+      </article>
+
+      <article class="svc">
+        <h3>Fabrication</h3>
+        <div>
+          <p>One-off parts built to fit when the replacement is discontinued, back-ordered or never existed.</p>
+          <ul><li>Brackets and mounts</li><li>Guards and skid plates</li><li>Racks and toolboxes</li><li>Trailer work</li><li>Custom hitches</li></ul>
+        </div>
+      </article>
+
+      <article class="svc">
+        <h3>Sandblasting</h3>
+        <div>
+          <p>Rust, scale and old paint taken back to clean metal, ready for primer the same day.</p>
+          <ul><li>Frames and trailers</li><li>Buckets and implements</li><li>Tanks</li><li>Surface prep for coating</li></ul>
+        </div>
+      </article>
+
+      <article class="svc">
+        <h3>Mobile tire service and sales</h3>
+        <div>
+          <p>Tires changed, repaired and supplied where the machine is parked.</p>
+          <ul><li>Equipment and ag tires</li><li>Semi and trailer</li><li>Flat repair</li><li>New tire sales</li></ul>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section class="band" id="rates">
+    <div class="wrap">
+      <div class="band-head">
+        <h2>Rates</h2>
+        <p>Published so you can budget before you call. Every job still gets a written quote before
+          any work starts.</p>
+      </div>
+
+      <!-- ================================================================
+           PLACEHOLDER RATES — every number below is a stand-in.
+           Replace each .price value with Ted's real figures before launch.
+           ================================================================ -->
+      <div class="rates-grid">
+        <div>
+          <div class="rate-group">
+            <h3>Labor</h3>
+            <div class="rate-line"><span class="label">Field labor</span><span class="lead"></span><span class="price">$125 / hour</span></div>
+            <div class="rate-line"><span class="label">Welding and fabrication</span><span class="lead"></span><span class="price">$135 / hour</span></div>
+            <div class="rate-line"><span class="label">Sandblasting</span><span class="lead"></span><span class="price">$145 / hour</span></div>
+            <div class="rate-line"><span class="label">After hours, weekends and holidays</span><span class="lead"></span><span class="price">1.5&times; labor</span></div>
+          </div>
+
+          <div class="rate-group">
+            <h3>Getting there</h3>
+            <div class="rate-line"><span class="label">Service call, first 30 miles</span><span class="lead"></span><span class="price">$95</span></div>
+            <div class="rate-line"><span class="label">Mileage beyond 30 miles</span><span class="lead"></span><span class="price">$2.50 / mile</span></div>
+            <div class="rate-line"><span class="label">Minimum on-site charge</span><span class="lead"></span><span class="price">2 hours</span></div>
+          </div>
+
+          <div class="rate-group">
+            <h3>Tire service</h3>
+            <div class="rate-line"><span class="label">Tire service call</span><span class="lead"></span><span class="price">$110</span></div>
+            <div class="rate-line"><span class="label">Flat repair, per tire</span><span class="lead"></span><span class="price">$65</span></div>
+            <div class="rate-line"><span class="label">New tires</span><span class="lead"></span><span class="price">Quoted per size</span></div>
+          </div>
+        </div>
+
+        <div class="terms">
+          <h3>How billing works</h3>
+          <ul>
+            <li>Quotes are free, and the quoted price is what you pay unless you approve extra work.</li>
+            <li>Labor is billed from arrival on site, in quarter-hour increments after the minimum.</li>
+            <li>Parts are billed at cost plus a standard markup, with receipts on request.</li>
+            <li>Payment by cash, check or card on completion. Net terms available for accounts.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="band" id="quote">
+    <div class="wrap">
+      <div class="band-head">
+        <h2>Request a quote</h2>
+        <p>Tell us what broke and where it is. You will hear back the same day, usually within a
+          couple of hours.</p>
+      </div>
+
+      <div class="quote-grid">
+        <div>
+          <div class="fields">
+            <div>
+              <label for="q-name">Your name</label>
+              <input type="text" id="q-name" autocomplete="name">
+            </div>
+            <div>
+              <label for="q-phone">Phone</label>
+              <input type="tel" id="q-phone" autocomplete="tel" placeholder="760-555-0134">
+            </div>
+            <div>
+              <label for="q-email">Email</label>
+              <input type="email" id="q-email" autocomplete="email" placeholder="you@example.com">
+            </div>
+            <div>
+              <label for="q-where">Where the equipment is</label>
+              <input type="text" id="q-where" placeholder="City, or address if you have it">
+            </div>
+            <div class="f-full">
+              <label for="q-machine">What needs work</label>
+              <input type="text" id="q-machine" placeholder="Make, model and year if you know it">
+            </div>
+            <div class="f-full">
+              <label>What you need</label>
+              <div class="checks">
+                <label><input type="checkbox" value="Heavy equipment repair">Heavy equipment repair</label>
+                <label><input type="checkbox" value="Ag tractor or semi truck">Ag tractor or semi truck</label>
+                <label><input type="checkbox" value="Welding">Welding</label>
+                <label><input type="checkbox" value="Fabrication">Fabrication</label>
+                <label><input type="checkbox" value="Sandblasting">Sandblasting</label>
+                <label><input type="checkbox" value="Tire service">Tire service</label>
+                <label><input type="checkbox" value="Not sure">Not sure yet</label>
+              </div>
+            </div>
+            <div>
+              <label for="q-when">How soon</label>
+              <select id="q-when">
+                <option>It is down and I need it now</option>
+                <option selected>This week</option>
+                <option>Flexible, whenever you can get out</option>
+              </select>
+            </div>
+            <div>
+              <label for="q-move">Can it be moved?</label>
+              <select id="q-move">
+                <option selected>No, work has to happen on site</option>
+                <option>Yes, it can be hauled</option>
+                <option>Not sure</option>
+              </select>
+            </div>
+            <div class="f-full">
+              <label for="q-detail">Describe the problem</label>
+              <textarea id="q-detail" placeholder="What it is doing, when it started, anything already tried."></textarea>
+            </div>
+          </div>
+
+          <div class="form-actions">
+            <button class="btn btn-solid" id="q-send" type="button">Send request</button>
+            <button class="btn btn-line" id="q-text" type="button">Send as a text instead</button>
+          </div>
+          <p class="form-msg" id="q-msg" role="status" aria-live="polite"></p>
+        </div>
+
+        <aside class="quote-aside">
+          <h3>Rather just call?</h3>
+          <p>Ted picks up the cell at <a href="tel:+17608038620">760-803-8620</a>. Photos sent by
+            text usually save a trip.</p>
+          <h3>What helps most</h3>
+          <ul class="want">
+            <li>A photo of the part that failed, and one of the whole machine.</li>
+            <li>The make, model and year off the data plate.</li>
+            <li>Whether there is room for a service truck to pull alongside.</li>
+            <li>Whether the machine still runs and moves.</li>
+          </ul>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <section class="band" id="contact">
+    <div class="wrap">
+      <div class="band-head">
+        <h2>Contact</h2>
+      </div>
+      <div class="contact-grid">
+        <div>
+          <h3>Owner</h3>
+          <p>Ted (Falcon) Sowko</p>
+        </div>
+        <div>
+          <h3>Cell</h3>
+          <p><a href="tel:+17608038620">760-803-8620</a></p>
+        </div>
+        <div>
+          <h3>Office</h3>
+          <p><a href="tel:+17607898620">760-789-8620</a></p>
+        </div>
+        <div>
+          <h3>Email</h3>
+          <p><a href="mailto:falcon@falconmobileservices.com" data-fill="email">falcon@falconmobileservices.com</a></p>
+        </div>
+        <div>
+          <h3>Service area</h3>
+          <p data-fill="area">San Diego County and surrounding areas</p>
+        </div>
+        <div>
+          <h3>Hours</h3>
+          <p data-fill="hours">Monday to Saturday, 7am to 6pm</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-foot">
+  <div class="wrap foot-grid">
+    <div class="foot-brand">
+      <svg class="mark" viewBox="0 0 150 102" style="color:#DEDACF" aria-hidden="true"><use href="#fms-mark"/></svg>
+      <span class="nm">FALCON MOBILE SERVICES</span>
+    </div>
+    <div class="foot-materials"><span>Stainless</span><span>Aluminum</span><span>Steel</span></div>
+    <span class="foot-note">&copy; 2026 Falcon Mobile Services</span>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* =============================================================
+     THE TORCH PROGRESS BAR
+
+     The torch is traced from the business card: nozzle at the far
+     left, the neck bending down and away below the header, the
+     handle and grip, the ribbed strain relief, then the cable
+     running out to the right edge.
+
+     Nothing of it is drawn ahead of the bird. The torch is clipped
+     to scroll position, so the only thing that brings it into
+     existence is the falcon flying along it, and sparks come off the
+     nozzle as the tip is uncovered.
+
+     Geometry is authored against a 22-unit handle height with the
+     origin at the handle's left edge, on the body centreline, then
+     scaled to whatever the band is worth on this screen.
+     ============================================================= */
+  /* the bird on the bar is the same silhouette as the logo, reused from
+     <defs> so there is only ever one copy of it. The paper-coloured halo
+     keeps it legible where it crosses the black cable. */
+
+  var INK = '#141414', EMBER = '#C0271B';
+  var SHIFT = 27;          // slides the nozzle tip clear of the left edge
+  var TIP_X = SHIFT + 1.2;  // nozzle tip, authoring units
+  var TIP_Y = 87.1;
+
+  var bar    = document.getElementById('torchbar');
+  var svg    = document.getElementById('torchSvg');
+  var live   = document.getElementById('torchLive');
+  var clipR  = document.getElementById('revealRect');
+  var sparkG = document.getElementById('sparks');
+  var falcon = document.getElementById('falconG');
+  var wingsBack  = falcon.querySelectorAll('.wb');
+  var wingsFront = falcon.querySelectorAll('.wf');
+  var SHOULDER_X = 82.72, SHOULDER_Y = 72.76;   // where both wings pivot
+  var BELLY_X = 88, BELLY_Y = 96;             // the point that rides the line
+
+  /* The bird's route is the torch's own centreline: up out of the nozzle,
+     round the bend of the gooseneck, then dead level along the cable. Sampled
+     once into x/y pairs, then looked up by the x the reveal has reached. */
+  /* the bird's route is the traced centreline of the nozzle and neck, sampled
+     off the card, running level once it reaches the handle */
+  var FLIGHT = [[28.0,82.8], [31.4,81.2], [34.7,79.1], [38.0,77.0], [41.3,71.5], [44.6,65.8], [48.0,60.9], [51.3,54.7], [54.6,51.4], [57.9,45.9], [61.2,31.0], [64.5,26.1], [67.9,21.2], [71.2,17.5], [74.5,13.3], [77.8,11.0], [81.1,8.4], [84.5,5.8], [87.8,4.0], [91.1,2.4], [94.4,1.3], [97.7,0.3], [101.0,-0.6], [104.4,-1.0], [107.7,-1.4], [111.0,-1.4], [114.3,0.9], [119.0,0.0], [131.0,0.0]];
+  var FX = [], FY = [];
+  for (var fi = 0; fi < FLIGHT.length; fi++){ FX.push(FLIGHT[fi][0]); FY.push(FLIGHT[fi][1]); }
+
+  var FLAT_X = FX[FX.length-1];
+
+  function flightAt(xa){
+    if(xa <= FX[0]) return { y:FY[0], ang:Math.atan2(FY[1]-FY[0], FX[1]-FX[0]) };
+    if(xa >= FLAT_X) return { y:FY[FY.length-1], ang:0 };
+    for(var i=1;i<FX.length;i++){
+      if(FX[i] >= xa){
+        var f = (xa - FX[i-1]) / (FX[i] - FX[i-1] || 1);
+        return { y: FY[i-1] + (FY[i]-FY[i-1])*f,
+                 ang: Math.atan2(FY[i]-FY[i-1], FX[i]-FX[i-1]) };
+      }
+    }
+    return { y:FY[FY.length-1], ang:0 };
+  }
+
+  var W = 0, H = 40, S = 1, TOTAL = 140;
+
+  /* The torch is traced directly off the business card at 400dpi, so the
+     nozzle, the bend of the neck, the handle and grip, the trigger and the
+     strain relief are the card's own outlines rather than an approximation.
+     Units: the handle is 22 tall and the cable's centreline is y=0. Only the
+     cable is drawn by hand, because it has to stretch to the viewport. */
+  var TORCH_D = 'M10.4 90.0 C10.2 89.9 9.9 89.8 9.7 89.6 C9.1 89.3 8.0 88.8 7.5 88.6 C6.9 88.3 6.2 87.9 5.7 87.5 C5.3 87.1 4.6 86.6 4.5 86.6 C4.4 86.6 4.2 86.5 3.9 86.3 C3.7 86.1 3.3 86.0 3.2 85.9 C3.0 85.9 2.8 85.7 2.5 85.4 C2.3 85.2 1.9 85.0 1.8 84.9 C1.1 84.6 0.1 83.7 0.0 83.3 C-0.1 82.8 0.2 82.1 1.1 81.1 C1.2 81.0 1.3 80.7 1.4 80.6 C1.5 80.4 1.6 80.2 1.7 80.2 C1.7 80.1 1.9 79.8 2.0 79.5 C2.2 79.0 2.7 78.2 3.1 77.6 C3.3 77.4 3.5 77.1 3.6 77.0 C3.7 76.8 3.8 76.6 3.9 76.5 C4.0 76.4 4.2 76.1 4.4 75.8 C4.5 75.5 4.7 75.1 4.9 74.9 C5.0 74.8 5.2 74.4 5.3 74.1 C5.6 73.3 5.8 72.9 6.2 72.5 C6.4 72.3 6.5 72.2 6.6 71.9 C6.6 71.6 7.0 70.8 7.3 70.6 C7.3 70.5 7.4 70.3 7.5 70.1 C7.7 69.6 7.9 69.2 8.2 68.8 C8.3 68.7 8.4 68.4 8.5 68.3 C8.6 68.0 8.7 67.7 9.4 66.8 C10.3 65.4 10.5 64.9 10.6 64.7 C10.6 64.5 10.7 64.3 10.9 64.0 C11.1 63.8 11.3 63.5 11.5 63.2 L11.7 62.7 L11.7 62.1 C11.6 61.4 11.7 61.0 12.1 60.5 C12.2 60.4 12.4 59.9 12.7 59.3 C13.0 58.8 13.3 58.2 13.5 58.0 C13.6 57.9 13.7 57.6 13.8 57.5 C13.9 57.4 14.1 57.1 14.2 57.0 C14.3 56.8 14.5 56.5 14.7 56.2 C14.9 55.8 15.1 55.5 15.4 55.2 C16.0 54.5 16.1 54.3 16.3 53.9 C16.3 53.7 16.4 53.5 16.5 53.3 C16.5 53.2 16.6 52.9 16.6 52.8 C16.7 52.4 16.9 51.7 17.1 51.6 C17.1 51.5 17.1 51.5 17.1 51.4 C17.1 51.4 17.2 51.3 17.3 51.2 C17.5 50.9 18.0 50.0 18.3 49.5 C18.4 49.3 18.6 49.0 18.9 48.7 C19.4 48.2 19.8 47.7 19.9 47.3 C20.0 47.1 20.2 46.5 20.6 46.0 C20.7 45.7 21.0 45.3 21.1 45.0 C21.3 44.8 21.5 44.4 21.6 44.2 C21.8 44.0 21.9 43.7 21.9 43.6 C21.9 43.5 22.1 43.2 22.2 42.9 C22.6 42.2 22.6 41.5 22.4 40.9 C22.1 40.5 22.1 40.5 22.4 39.9 C22.7 39.1 23.2 38.7 24.8 37.8 C25.3 37.6 25.8 37.3 25.9 37.2 C26.0 37.1 26.2 37.1 26.7 37.1 C27.7 37.0 28.0 36.8 28.9 35.3 C29.0 35.1 29.2 34.8 29.3 34.7 C29.4 34.6 29.5 34.4 29.5 34.4 C29.5 34.2 30.2 32.9 30.8 32.3 C30.9 32.1 31.1 31.8 31.1 31.6 C31.2 31.5 31.3 31.3 31.4 31.1 C31.6 30.9 32.1 29.9 32.7 28.7 C33.0 28.2 33.3 27.8 33.3 27.7 C33.5 27.5 33.6 27.2 33.8 26.8 C33.8 26.7 34.0 26.4 34.1 26.2 C34.3 26.0 34.5 25.7 34.6 25.5 C34.8 25.3 35.0 25.1 35.1 25.0 C35.3 24.8 35.6 24.5 35.8 24.2 C36.6 22.8 36.9 22.3 37.0 22.2 C37.1 22.1 37.1 22.0 37.2 21.9 C37.2 21.9 37.4 21.5 37.6 21.2 C37.9 20.8 38.1 20.4 38.2 20.2 C38.3 20.0 38.4 19.8 38.6 19.6 C39.0 19.3 39.2 19.0 39.4 18.7 C39.4 18.5 39.6 18.3 39.7 18.1 C39.9 18.0 40.1 17.7 40.2 17.6 C40.3 17.4 40.4 17.3 40.5 17.2 C40.8 17.0 41.1 16.7 41.3 16.4 C41.6 15.9 42.9 14.7 43.2 14.6 C43.3 14.6 44.9 12.9 45.0 12.7 C45.0 12.6 45.3 12.4 45.6 12.1 C46.0 11.8 46.5 11.3 46.8 11.0 C47.2 10.7 47.8 10.2 48.1 9.9 C48.5 9.6 49.1 9.2 49.4 8.9 C50.2 8.3 50.6 8.0 51.3 7.6 C51.6 7.4 52.1 7.1 52.3 6.9 C52.5 6.7 52.9 6.5 53.1 6.3 C53.4 6.2 53.6 6.0 53.7 6.0 C53.7 5.9 53.9 5.9 54.1 5.8 C54.5 5.7 55.2 5.2 55.7 4.8 C56.1 4.4 58.4 3.2 59.3 2.9 C59.5 2.8 59.7 2.7 59.7 2.7 C59.8 2.6 60.0 2.5 60.1 2.4 C60.3 2.3 60.7 2.2 61.1 2.1 C61.5 2.0 61.9 1.8 62.1 1.8 C62.2 1.7 62.6 1.6 62.9 1.4 C63.2 1.3 63.6 1.1 63.8 1.0 C64.0 0.9 64.2 0.8 64.3 0.8 C64.3 0.8 64.6 0.7 64.9 0.6 C65.3 0.4 65.7 0.3 65.9 0.2 C66.2 0.2 66.6 0.1 66.9 -0.0 C67.1 -0.1 67.4 -0.2 67.5 -0.2 C67.6 -0.2 67.8 -0.3 68.0 -0.4 C68.4 -0.6 69.4 -0.9 70.3 -1.1 C70.5 -1.1 70.7 -1.2 70.8 -1.2 C70.8 -1.3 71.2 -1.3 71.6 -1.4 C71.9 -1.5 72.2 -1.6 72.3 -1.6 C72.3 -1.6 72.6 -1.6 73.0 -1.7 C73.4 -1.7 73.8 -1.8 74.0 -1.8 C74.3 -1.9 74.6 -2.0 74.7 -2.0 C75.1 -2.0 75.8 -2.1 76.5 -2.2 C77.1 -2.3 77.9 -2.4 80.1 -2.5 C81.3 -2.5 82.5 -2.6 82.8 -2.6 C83.2 -2.7 83.9 -2.7 84.4 -2.7 C85.7 -2.7 86.3 -2.9 86.7 -3.5 C87.0 -3.8 87.1 -4.1 86.9 -4.5 C86.9 -4.8 86.8 -5.1 86.9 -6.1 C86.9 -7.7 86.9 -7.9 87.4 -8.3 L87.7 -8.6 L88.1 -8.6 C88.9 -8.5 89.3 -8.5 89.6 -8.7 C90.1 -9.1 90.3 -9.1 93.5 -9.0 C96.2 -8.9 98.3 -8.9 100.7 -9.0 C104.7 -9.1 105.1 -9.1 106.9 -9.1 C107.4 -9.0 108.3 -9.1 108.8 -9.1 C109.6 -9.2 111.1 -9.2 112.1 -9.1 C112.3 -9.1 114.1 -9.2 116.1 -9.2 C118.2 -9.2 120.5 -9.2 121.3 -9.2 C125.9 -9.2 128.2 -9.2 128.3 -9.3 C128.3 -9.3 129.9 -9.3 131.7 -9.3 C133.9 -9.3 135.3 -9.3 135.5 -9.4 C135.8 -9.4 137.4 -9.4 139.7 -9.4 C142.0 -9.4 143.9 -9.5 144.3 -9.5 C144.6 -9.6 145.8 -9.6 146.8 -9.6 C150.2 -9.7 152.9 -9.8 153.1 -9.8 C153.3 -9.9 153.4 -9.9 153.5 -9.9 C153.6 -9.9 156.0 -9.9 158.8 -9.9 C161.6 -9.9 166.3 -10.0 169.2 -10.0 C172.1 -10.0 174.5 -10.0 174.6 -10.1 C174.6 -10.1 175.9 -10.1 177.4 -10.1 C181.9 -10.1 186.8 -10.3 187.5 -10.4 C188.0 -10.5 195.1 -10.5 202.7 -10.4 C211.4 -10.2 210.7 -10.2 211.3 -10.9 C211.5 -11.1 211.7 -11.3 212.0 -11.4 L212.3 -11.6 L217.1 -11.7 C224.8 -11.8 224.5 -11.8 224.8 -11.5 C224.9 -11.4 225.1 -11.2 225.3 -11.1 C225.5 -10.9 225.5 -10.8 225.6 -10.6 C225.6 -10.4 225.6 -10.3 225.7 -10.2 C225.9 -10.2 226.0 -9.9 225.9 -8.0 L225.9 -6.2 L226.4 -6.2 C227.1 -6.1 227.1 -6.1 227.6 -6.8 C228.4 -7.9 228.8 -8.0 229.1 -7.1 C229.3 -6.7 229.4 -6.5 229.7 -6.4 C230.5 -6.0 231.8 -6.3 232.1 -6.8 C232.2 -6.9 232.4 -7.1 232.5 -7.2 L232.8 -7.4 L233.1 -7.3 C233.2 -7.2 233.4 -7.1 233.4 -7.0 C233.4 -7.0 233.5 -6.9 233.6 -6.8 C233.6 -6.8 233.8 -6.7 233.8 -6.6 C234.0 -6.2 234.2 -6.2 235.1 -6.2 C235.8 -6.3 235.9 -6.3 236.3 -6.9 C236.5 -7.1 236.7 -7.3 236.7 -7.4 C237.0 -7.8 237.4 -7.7 237.8 -7.1 C238.1 -6.4 238.3 -6.3 239.1 -6.2 C240.1 -6.2 240.6 -6.4 241.1 -7.2 C241.5 -7.8 242.3 -7.7 242.7 -6.9 C242.9 -6.5 243.4 -6.2 244.2 -6.3 C244.7 -6.3 244.9 -6.4 245.4 -7.1 C245.9 -8.0 246.3 -8.1 246.6 -7.5 C247.3 -6.4 247.5 -6.2 248.6 -6.2 C249.2 -6.2 249.6 -6.4 249.8 -6.8 C249.9 -6.9 250.1 -7.2 250.3 -7.4 C250.7 -7.8 250.8 -7.8 251.4 -7.1 C252.0 -6.4 252.1 -6.3 252.5 -6.4 C252.6 -6.4 252.9 -6.4 253.1 -6.4 C253.7 -6.5 254.0 -6.7 254.3 -7.3 C254.7 -8.1 255.8 -8.1 256.0 -7.2 C256.0 -7.0 256.1 -6.8 256.2 -6.7 L256.4 -6.5 L257.4 -6.5 L258.3 -6.5 L258.5 -6.7 C258.6 -6.8 258.8 -7.0 258.9 -7.2 C259.3 -8.2 259.9 -8.1 260.4 -7.1 C260.7 -6.8 260.8 -6.7 261.2 -6.6 C261.4 -6.6 261.7 -6.6 261.8 -6.5 C262.3 -6.4 262.8 -6.7 263.1 -7.3 C263.6 -8.2 264.3 -8.3 264.7 -7.4 C264.8 -7.2 265.0 -7.0 265.1 -6.9 C265.2 -6.8 265.3 -6.7 265.4 -6.6 C265.6 -6.5 265.6 -6.5 266.0 -6.6 C266.8 -6.7 267.1 -6.9 267.3 -7.5 C267.5 -8.1 268.3 -8.3 268.5 -7.9 C268.6 -7.8 268.7 -7.6 268.7 -7.5 C268.8 -7.4 268.9 -7.2 268.9 -7.1 C269.0 -6.7 269.3 -6.5 269.8 -6.5 C270.0 -6.5 270.2 -6.5 270.2 -6.5 C270.3 -6.4 270.3 -5.8 270.3 0.4 L270.3 7.2 L269.7 7.9 L269.1 8.6 L268.7 8.5 C268.3 8.5 267.6 8.5 267.0 8.5 C266.4 8.6 266.0 8.4 265.7 8.0 C265.4 7.5 265.3 7.4 264.9 7.3 C264.2 7.0 263.8 7.1 263.2 7.7 C262.6 8.4 261.6 8.6 261.1 8.0 C260.4 7.1 259.8 7.1 259.0 7.8 C258.5 8.2 257.8 8.5 257.5 8.5 C257.4 8.5 257.3 8.5 257.1 8.2 C256.9 8.1 256.7 7.8 256.5 7.7 C256.0 7.0 254.9 7.1 254.4 7.8 C253.6 9.0 253.1 9.0 251.8 7.8 C251.4 7.3 251.3 7.3 251.1 7.3 C250.8 7.3 250.1 7.7 249.8 8.0 C249.2 8.6 248.4 8.7 247.9 8.1 C246.6 6.9 246.4 6.9 245.4 8.1 C244.9 8.6 244.8 8.7 244.2 8.6 C243.7 8.6 243.4 8.4 243.2 8.1 C242.8 7.6 242.3 7.1 242.2 7.1 C241.8 7.0 241.2 7.4 240.9 8.0 C240.5 8.9 239.4 9.0 238.4 8.2 C237.7 7.6 237.4 7.6 236.9 8.1 C236.3 8.7 235.7 8.9 235.1 8.7 C234.8 8.7 233.5 7.6 233.5 7.5 C233.5 7.4 233.1 7.4 232.9 7.5 C232.7 7.7 232.3 8.1 232.1 8.4 C232.0 8.7 231.9 8.7 231.4 8.9 C230.7 9.1 230.2 8.9 229.7 8.2 C229.1 7.5 228.7 7.4 228.1 8.1 C228.0 8.2 227.7 8.5 227.5 8.7 C227.2 8.9 226.9 9.3 226.8 9.5 L226.6 9.9 L226.5 11.1 C226.5 12.4 226.4 12.5 226.1 12.8 C225.6 13.2 225.3 13.3 224.2 13.0 C223.8 12.9 223.4 12.8 223.3 12.8 C223.0 12.8 222.6 12.7 222.3 12.5 C221.9 12.2 221.8 12.1 221.1 12.0 C220.8 12.0 220.4 11.9 220.3 11.9 C220.0 11.8 217.3 11.8 216.4 11.9 C215.0 12.1 214.6 12.2 214.1 12.6 C214.0 12.7 213.7 12.8 213.5 12.9 C213.3 13.0 212.9 13.2 212.6 13.4 C212.2 13.7 212.0 13.9 211.2 14.8 C211.1 14.9 210.9 15.1 210.7 15.1 C210.5 15.2 210.2 15.3 209.9 15.4 C209.6 15.5 209.4 15.6 209.3 15.7 C209.3 15.7 209.0 15.8 208.7 15.8 C208.4 15.9 208.0 15.9 207.9 16.0 C207.8 16.0 207.4 16.0 206.9 16.0 C206.5 16.0 206.0 16.1 205.9 16.1 C205.2 16.3 201.0 16.4 196.4 16.4 C195.3 16.4 194.1 16.4 193.7 16.4 C193.2 16.4 192.6 16.4 192.0 16.4 C191.5 16.4 191.0 16.4 190.8 16.4 C190.1 16.5 186.5 16.5 184.5 16.5 C183.9 16.5 183.2 16.5 182.9 16.5 C182.6 16.6 181.1 16.6 179.5 16.6 C175.7 16.7 175.7 16.7 175.5 16.7 C175.2 16.6 170.9 16.7 170.6 16.8 C170.4 16.8 170.2 16.8 170.0 16.7 C169.8 16.7 169.6 16.7 169.4 16.7 C169.0 16.8 168.5 16.8 168.2 16.7 C168.0 16.6 167.9 16.6 167.6 16.7 C167.3 16.7 167.0 16.8 166.7 16.8 C166.4 16.8 165.6 16.8 165.0 16.8 C164.3 16.8 163.4 16.7 163.0 16.7 C162.6 16.7 162.0 16.6 161.6 16.6 C161.2 16.6 160.7 16.5 160.5 16.5 C160.4 16.4 160.0 16.3 159.8 16.3 C159.3 16.3 159.0 16.1 158.7 15.9 C158.5 15.7 158.3 15.7 157.9 15.6 C157.3 15.5 157.1 15.4 156.8 15.3 C156.7 15.2 156.5 15.0 156.3 14.9 L156.0 14.7 L154.8 14.6 C153.3 14.5 148.0 14.5 147.1 14.6 C146.6 14.6 145.0 14.7 142.4 14.8 L141.2 14.8 L140.8 15.0 C140.2 15.4 140.3 15.8 141.1 15.9 C141.8 15.9 142.3 16.0 142.5 16.1 C142.6 16.2 142.8 16.2 143.0 16.2 C143.5 16.2 144.0 16.3 144.6 16.5 C144.8 16.6 145.2 16.7 145.5 16.7 C145.7 16.8 146.0 16.8 146.1 16.8 C146.3 16.9 146.6 16.9 146.8 17.0 C147.2 17.0 147.4 17.1 147.6 17.1 C147.8 17.2 148.1 17.3 148.6 17.3 C150.0 17.4 151.6 17.7 151.9 17.9 C152.0 17.9 152.2 17.9 152.7 17.9 C153.1 17.9 153.3 17.9 153.5 17.9 C153.5 18.0 153.8 18.0 154.2 18.1 C154.7 18.1 155.1 18.2 156.0 18.6 C156.2 18.6 156.5 18.7 156.7 18.8 C157.2 18.9 157.5 19.0 157.9 19.3 C158.0 19.4 158.2 19.6 158.3 19.6 C158.5 19.6 159.0 20.2 159.2 20.6 C159.4 21.1 159.2 22.9 158.9 23.2 C158.7 23.4 158.1 23.8 157.9 23.8 C157.6 23.9 155.6 23.7 155.2 23.6 C155.0 23.5 154.6 23.4 154.4 23.4 C154.1 23.4 153.7 23.3 153.4 23.2 C153.1 23.1 152.6 23.0 152.2 23.0 C151.9 22.9 151.1 22.8 150.6 22.8 C150.1 22.7 149.3 22.6 148.8 22.5 C148.3 22.5 147.7 22.4 147.5 22.3 C147.2 22.2 146.8 22.2 146.6 22.2 C146.3 22.1 145.7 22.0 144.6 21.8 C144.4 21.8 144.1 21.7 143.9 21.7 C143.7 21.7 143.3 21.6 143.0 21.5 C142.7 21.4 142.1 21.4 141.6 21.3 C141.1 21.3 140.6 21.2 140.5 21.2 C140.2 21.1 139.7 21.0 139.1 21.0 C138.1 20.8 137.6 20.7 137.3 20.6 C137.2 20.5 136.8 20.4 136.6 20.4 C136.4 20.3 136.1 20.3 135.9 20.3 C135.6 20.2 135.3 20.2 134.1 20.0 C133.6 20.0 133.1 19.9 133.0 19.8 C132.1 19.6 129.6 19.5 129.2 19.8 C128.4 20.1 128.5 19.8 128.5 24.0 C128.4 31.6 128.4 31.2 127.9 31.9 C127.1 32.8 127.1 32.8 125.2 32.9 C124.4 33.0 123.6 33.0 123.3 33.0 C123.1 33.1 122.9 33.1 122.8 33.1 C122.7 33.1 122.1 33.1 121.4 33.1 C119.0 33.3 115.5 33.3 114.3 33.3 C112.7 33.3 106.7 33.5 106.5 33.6 C106.5 33.6 105.9 33.6 105.2 33.6 C104.5 33.6 103.2 33.6 102.4 33.6 C100.2 33.6 99.7 33.5 99.0 33.1 C98.3 32.6 98.1 32.4 97.9 31.5 C97.8 31.1 97.6 30.8 97.5 30.6 C97.2 30.1 96.7 29.1 96.7 28.6 C96.6 28.0 96.5 27.7 96.3 27.1 C96.1 26.8 95.9 26.4 95.9 26.2 C95.8 26.1 95.7 25.7 95.7 25.5 C95.6 25.1 95.6 24.9 95.3 24.5 C95.2 24.2 95.0 23.8 95.0 23.6 C94.9 23.4 94.8 23.1 94.8 23.0 C94.7 22.9 94.6 22.5 94.6 22.1 C94.5 21.7 94.4 21.4 94.3 21.3 C94.2 21.1 93.9 20.0 93.8 19.6 C93.6 18.0 93.2 17.4 92.0 17.4 C91.4 17.3 91.3 17.3 91.0 17.0 C90.8 16.9 90.5 16.4 90.5 16.2 C90.5 15.8 89.9 15.4 89.1 15.2 C88.6 15.0 88.3 14.6 88.1 13.6 C88.1 13.3 88.0 13.0 87.9 12.8 C87.8 12.6 87.8 12.3 87.8 11.6 C87.7 10.3 87.6 10.2 86.8 9.9 L86.3 9.7 L84.0 9.7 C82.7 9.7 81.5 9.8 81.1 9.8 C80.8 9.9 80.3 9.9 79.9 10.0 C79.5 10.0 79.0 10.1 78.7 10.1 C77.9 10.3 76.6 10.4 76.5 10.4 C76.2 10.3 75.3 10.5 74.7 10.7 C74.4 10.8 74.2 10.9 73.9 10.9 C73.3 10.9 72.8 11.0 72.2 11.3 C71.7 11.5 71.4 11.6 70.9 11.6 C70.1 11.7 69.2 12.0 68.5 12.5 C67.8 12.9 67.7 13.0 67.3 13.0 C67.1 13.1 66.9 13.1 66.8 13.2 C66.7 13.2 66.5 13.3 66.3 13.4 C66.1 13.5 65.9 13.6 65.7 13.6 C65.6 13.7 65.4 13.8 65.4 13.8 C65.3 13.8 65.1 13.9 64.9 14.0 C64.2 14.5 63.6 14.9 63.4 14.9 C63.3 14.9 62.9 15.1 62.6 15.2 C62.3 15.4 62.0 15.5 61.9 15.5 C61.9 15.5 61.6 15.7 61.3 16.0 C61.0 16.2 60.6 16.5 60.4 16.6 C60.2 16.8 60.0 16.9 59.9 17.0 C59.8 17.1 59.1 17.5 59.1 17.5 C58.8 17.5 57.7 18.2 57.2 18.7 C56.9 18.9 56.5 19.3 56.3 19.4 C56.0 19.7 55.7 19.9 54.8 20.8 C54.5 21.1 54.1 21.4 54.0 21.5 C53.4 21.9 52.3 22.9 51.9 23.4 C51.7 23.6 51.3 24.0 50.9 24.4 C50.6 24.8 50.1 25.3 49.9 25.6 C49.7 25.8 49.5 26.1 49.4 26.1 C49.3 26.2 49.2 26.3 49.1 26.4 C49.0 26.5 48.9 26.7 48.8 26.8 C48.6 27.0 48.5 27.2 48.4 27.4 C48.2 27.7 48.0 28.0 47.7 28.4 C47.2 28.8 47.1 29.0 47.0 29.3 C46.8 29.8 46.8 30.0 46.4 30.4 C46.3 30.6 46.0 31.0 45.8 31.4 C45.5 31.9 44.7 32.8 44.4 33.0 C44.4 33.1 44.3 33.2 44.3 33.3 C44.2 33.6 43.8 34.2 43.5 34.5 C43.4 34.7 43.3 34.9 43.2 35.0 C43.1 35.1 42.9 35.4 42.7 35.6 C42.3 36.1 41.6 37.2 41.6 37.3 C41.6 37.5 40.6 39.6 40.4 39.8 C40.3 39.9 40.0 40.4 39.4 41.6 C39.2 41.9 39.0 42.4 38.9 42.5 C38.6 42.9 38.6 44.3 38.8 45.1 C39.1 46.3 39.0 48.3 38.6 49.0 C38.2 49.8 38.0 50.0 37.4 50.1 C37.0 50.1 36.9 50.2 36.8 50.3 C36.7 50.4 36.5 50.7 36.3 50.9 C36.2 51.1 35.9 51.4 35.8 51.6 C35.6 51.8 35.5 52.0 35.5 52.0 C35.4 52.1 34.7 53.4 34.4 53.9 C34.3 54.2 34.1 54.6 34.0 54.8 C33.8 55.0 33.6 55.3 33.5 55.5 C33.4 55.8 33.0 56.3 32.6 56.9 C32.5 57.0 32.3 57.2 32.3 57.4 C32.2 57.6 31.9 58.2 31.3 59.2 C31.1 59.5 31.0 59.7 31.0 59.8 C31.0 59.8 30.5 60.8 30.4 60.9 C30.4 60.9 30.3 61.1 30.3 61.3 C30.2 61.4 30.1 61.7 29.9 62.0 C29.8 62.2 29.6 62.5 29.6 62.6 C29.4 63.0 29.3 63.2 29.0 63.5 C28.9 63.7 28.7 64.0 28.6 64.2 C28.5 64.4 28.3 64.7 28.2 64.8 C28.2 64.9 28.0 65.2 27.8 65.5 C27.6 66.0 27.5 66.1 26.8 66.5 C26.7 66.6 26.6 66.7 26.6 66.9 C26.5 67.4 25.8 68.7 25.6 69.0 C25.3 69.3 24.9 69.9 24.9 70.2 C24.8 70.3 24.7 70.6 24.6 70.7 C24.5 70.8 24.5 71.0 24.5 71.0 C24.5 71.1 23.8 72.1 23.7 72.2 C23.6 72.3 23.4 72.7 23.2 73.1 C22.9 73.7 22.8 73.8 22.4 74.2 C22.0 74.6 21.9 74.8 21.8 75.0 C21.7 75.5 21.1 76.6 20.9 76.7 C20.8 76.7 20.8 76.8 20.8 76.9 C20.8 77.2 20.5 77.9 20.1 78.3 C19.9 78.5 19.7 78.8 19.6 79.0 C19.5 79.1 19.2 79.4 19.0 79.6 C18.8 79.8 18.6 80.1 18.5 80.2 C18.5 80.3 18.2 80.6 18.0 80.8 C17.7 81.1 17.6 81.3 17.4 81.7 C17.2 82.1 17.0 82.4 16.9 82.5 C16.8 82.6 16.6 82.8 16.5 82.9 C16.4 83.1 16.1 83.4 15.9 83.7 C15.7 83.9 15.4 84.2 15.4 84.4 C15.3 84.5 15.2 84.7 15.1 84.8 C15.0 84.9 14.9 85.1 14.8 85.3 C14.7 85.5 14.7 85.7 14.6 85.8 C14.6 85.8 14.4 86.2 14.1 86.6 C13.9 87.0 13.6 87.4 13.5 87.6 C13.3 87.7 13.1 87.9 13.0 88.1 C12.9 88.4 12.8 88.6 12.8 88.6 C12.7 88.7 12.5 88.9 12.4 89.2 C11.9 90.1 11.3 90.4 10.4 90.0 Z M34.4 40.5 C34.5 40.4 34.7 40.2 34.8 40.1 C34.9 39.9 35.2 39.7 35.4 39.5 C35.6 39.3 35.8 39.1 35.9 38.9 C36.0 38.8 36.2 38.4 36.3 38.2 C36.5 37.9 36.7 37.5 36.8 37.3 C37.0 36.9 37.2 36.5 37.7 35.7 C37.9 35.4 38.1 35.1 38.1 35.0 C38.2 34.8 38.4 34.5 38.9 33.6 C39.1 33.4 39.3 33.0 39.4 32.9 C39.5 32.5 40.0 31.9 40.2 31.6 C40.2 31.6 40.4 31.2 40.6 30.9 C40.7 30.6 40.9 30.3 41.0 30.2 C41.2 29.9 41.4 29.4 41.4 29.1 C41.4 28.7 41.5 28.3 41.7 28.1 C41.8 28.0 42.0 27.8 42.2 27.5 C42.3 27.3 42.6 27.1 42.8 26.9 C43.3 26.5 43.7 26.0 44.0 25.6 C44.1 25.3 44.4 25.0 44.6 24.8 C44.8 24.6 45.0 24.3 45.1 24.2 C45.2 24.0 45.5 23.6 45.9 23.2 C46.5 22.5 47.0 21.8 47.2 21.5 C47.2 21.4 47.3 21.3 47.4 21.2 C47.4 21.1 47.7 20.9 47.9 20.6 C48.4 19.9 50.6 17.7 50.9 17.6 C51.0 17.5 51.6 16.9 52.2 16.4 C52.8 15.8 53.4 15.2 53.6 15.1 C53.7 15.0 54.0 14.8 54.2 14.7 C54.3 14.5 54.7 14.3 54.9 14.2 C55.4 13.9 55.9 13.4 56.3 13.0 C56.5 12.8 56.8 12.5 57.0 12.4 C57.2 12.3 57.4 12.1 57.5 12.0 C57.6 12.0 57.9 11.8 58.1 11.6 C58.3 11.5 58.6 11.3 58.8 11.2 C59.0 11.0 59.1 10.9 59.2 10.9 C59.4 10.9 59.8 10.7 60.3 10.3 C61.2 9.7 61.7 9.4 62.1 9.2 C62.3 9.2 62.7 9.0 63.0 8.8 C63.2 8.7 63.5 8.5 63.6 8.5 C63.7 8.5 63.9 8.4 64.2 8.3 C65.0 7.8 65.5 7.5 65.9 7.5 C66.1 7.4 66.4 7.3 66.6 7.3 C66.8 7.2 67.1 7.1 67.3 7.0 C67.6 6.9 67.9 6.7 68.2 6.6 C68.4 6.4 68.8 6.3 69.1 6.2 C69.3 6.1 69.7 6.0 69.9 5.9 C70.2 5.8 70.4 5.7 70.6 5.7 C71.0 5.7 71.2 5.6 71.5 5.4 C71.8 5.2 72.3 5.1 72.9 5.1 C73.5 5.1 73.9 5.0 74.2 4.9 C74.5 4.7 75.8 4.4 76.6 4.4 C76.9 4.3 77.4 4.3 77.6 4.2 C77.7 4.2 78.1 4.1 78.4 4.1 C78.7 4.1 79.2 4.0 79.4 4.0 C80.5 3.8 84.9 3.7 85.8 3.8 C86.4 4.0 87.0 3.2 86.8 2.4 C86.8 2.3 86.8 2.0 86.8 1.7 C86.9 0.9 86.7 0.4 86.0 0.0 C85.7 -0.2 85.6 -0.2 85.4 -0.2 C85.0 -0.1 84.2 -0.1 81.9 -0.2 C81.0 -0.2 80.0 -0.2 79.8 -0.2 C78.8 -0.0 77.8 0.1 77.5 0.3 C77.3 0.3 76.9 0.4 76.6 0.4 C75.2 0.6 74.0 0.8 73.7 0.9 C73.7 1.0 73.4 1.0 73.1 1.1 C72.9 1.1 72.4 1.3 72.1 1.4 C71.3 1.7 70.8 1.8 69.8 2.1 C69.0 2.3 68.5 2.5 68.2 2.7 C67.9 2.8 67.2 2.9 66.7 3.0 C66.4 3.0 66.1 3.1 65.6 3.4 C65.4 3.5 65.1 3.7 64.9 3.7 C64.4 3.9 63.1 4.5 63.0 4.6 C62.9 4.8 62.1 5.3 61.7 5.5 C60.8 5.9 60.4 6.1 60.1 6.3 C59.9 6.5 59.7 6.6 59.7 6.6 C59.6 6.6 58.4 7.2 58.1 7.4 C57.9 7.6 57.7 7.7 57.5 7.8 C56.9 8.2 56.4 8.8 56.4 9.2 C56.4 9.8 56.0 10.2 54.8 10.8 C54.0 11.3 54.0 11.3 53.8 11.6 C53.7 11.9 53.3 12.1 53.1 12.1 C52.9 12.1 52.7 12.4 52.4 12.8 C51.9 13.4 51.5 13.9 50.8 14.3 C49.4 15.3 49.3 15.3 49.0 15.2 C48.8 15.2 47.6 16.2 47.3 16.8 C47.1 17.0 47.0 17.1 46.9 17.1 C46.6 17.2 45.8 18.2 45.7 18.7 C45.6 19.0 44.8 20.7 44.5 21.0 C44.2 21.5 44.1 21.6 43.3 22.3 C42.3 23.1 41.8 23.8 41.6 24.5 C41.4 25.1 40.8 25.9 40.1 26.2 C39.7 26.4 39.2 26.8 39.1 26.9 C39.0 27.0 38.7 27.9 38.6 28.7 C38.5 29.1 38.4 29.6 38.3 29.7 C37.5 31.2 37.4 31.3 37.1 31.6 C36.6 32.0 36.4 32.4 36.2 33.4 C36.1 33.6 36.0 33.8 36.0 33.9 C35.9 34.0 35.8 34.1 35.7 34.2 C35.7 34.3 35.4 34.6 35.0 34.9 C34.5 35.5 34.4 35.5 34.3 35.9 C34.3 36.1 34.1 36.5 33.9 36.9 C33.7 37.2 33.5 37.6 33.5 37.7 C33.4 37.9 33.3 38.0 33.1 38.2 C33.0 38.3 32.9 38.6 32.8 38.9 C32.7 39.1 32.5 39.5 32.5 39.7 L32.4 39.9 L32.5 40.1 C33.0 40.6 34.0 40.8 34.4 40.5 Z';
+  var CABLE_T = 6.637;      // half the cable's thickness
+  var CABLE_X = 270.3;      // where the traced outline stops and the bar takes over
+
+  function torchMarkup(endX){
+    var ex = Math.max(endX, CABLE_X + 6);
+    return '<g transform="translate(' + SHIFT + ',0)">'
+      + '<path d="' + TORCH_D + '" fill="' + INK + '"/>'
+      + '<path d="M ' + (CABLE_X - 2) + ' ' + (-CABLE_T) + ' L ' + ex.toFixed(1) + ' ' + (-CABLE_T)
+        + ' L ' + ex.toFixed(1) + ' ' + CABLE_T + ' L ' + (CABLE_X - 2) + ' ' + CABLE_T + ' Z" fill="'
+        + INK + '"/>'
+      + '</g>';
+  }
+
+  function layout(){
+    W = bar.offsetWidth || window.innerWidth;
+    H = bar.offsetHeight || 40;
+    var handle = W < 760 ? 12 : 18;          // handle height in CSS pixels
+    S = handle / 22;
+    TOTAL = H/2 + (TIP_Y + 14) * S;
+    var m = torchMarkup(W/S - SHIFT);
+    svg.setAttribute('viewBox', '0 0 ' + W + ' ' + TOTAL.toFixed(0));
+    var wrapOpen = '<g transform="translate(0,' + (H/2).toFixed(2) + ') scale(' + S.toFixed(4) + ')">';
+    live.innerHTML  = wrapOpen + m + '</g>';
+    clipR.setAttribute('height', TOTAL.toFixed(0));
+  }
+
+  var progress = 0, vel = 0, dir = 1, lastY = window.pageYOffset || 0, flap = 0, beatAmp = 0, lastTs = 0;
+  var sparks = [];
+
+  function readScroll(){
+    var y = window.pageYOffset || 0;
+    var max = Math.max(1, document.documentElement.scrollHeight - window.innerHeight);
+    var dy = y - lastY;
+    if(dy) dir = dy > 0 ? 1 : -1;
+    vel += Math.abs(dy) * 0.014;
+    lastY = y;
+    progress = Math.max(0, Math.min(1, y / max));
+    bar.setAttribute('aria-valuenow', Math.round(progress * 100));
+  }
+
+  function tipPoint(){ return { x: TIP_X * S, y: H/2 + TIP_Y * S }; }
+  function tipLit(){ return progress * W > (TIP_X + 16) * S; }
+
+  function emit(n){
+    var t = tipPoint();
+    for(var i=0;i<n;i++){
+      var a = (0.15 + Math.random() * 0.7) * Math.PI;     // fanning downward
+      var sp = (0.05 + Math.random() * 0.16) * S / 0.82;
+      sparks.push({ x:t.x, y:t.y, vx:Math.cos(a)*sp*(Math.random()<.5?-1:1), vy:Math.sin(a)*sp, life:1 });
+    }
+    if(sparks.length > 34) sparks.splice(0, sparks.length - 34);
+  }
+
+  function drawSparks(dt){
+    var out = [];
+    for(var i=0;i<sparks.length;i++){
+      var s0 = sparks[i];
+      s0.x += s0.vx * dt; s0.y += s0.vy * dt; s0.vy += 0.00016 * dt;
+      s0.life -= dt / 620;
+      if(s0.life <= 0) continue;
+      out.push('<path d="M ' + s0.x.toFixed(1) + ' ' + s0.y.toFixed(1) + ' L '
+        + (s0.x - s0.vx*26).toFixed(1) + ' ' + (s0.y - s0.vy*26).toFixed(1)
+        + '" stroke="' + EMBER + '" stroke-width="' + (1.7*S/0.82).toFixed(2)
+        + '" stroke-linecap="round" opacity="' + s0.life.toFixed(2) + '"/>');
+      sparks[out.length-1] = s0;
+    }
+    sparks.length = out.length;
+    sparkG.innerHTML = out.join('');
+  }
+
+  function staticSparks(){
+    var t = tipPoint(), out = [];
+    if(tipLit()){
+      var ang = [0.30, 0.52, 0.78, 1.00, 0.22, 0.66];
+      for(var i=0;i<ang.length;i++){
+        var a = ang[i] * Math.PI, L = (10 + i*3) * S / 0.82, sgn = i % 2 ? -1 : 1;
+        out.push('<path d="M ' + (t.x + Math.cos(a)*4*sgn).toFixed(1) + ' ' + (t.y + Math.sin(a)*4).toFixed(1)
+          + ' L ' + (t.x + Math.cos(a)*L*sgn).toFixed(1) + ' ' + (t.y + Math.sin(a)*L).toFixed(1)
+          + '" stroke="' + EMBER + '" stroke-width="' + (1.7*S/0.82).toFixed(2) + '" stroke-linecap="round"/>');
+      }
+    }
+    sparkG.innerHTML = out.join('');
+  }
+
+  var rot = 0, rotSet = false;
+
+  function draw(beat){
+    var edge = progress * W;
+    clipR.setAttribute('width', edge.toFixed(1));
+
+    var fs = S * 0.38;
+    var pt = flightAt(edge / S);
+    var deg = pt.ang * 180 / Math.PI * 0.8;
+    if(!rotSet){ rot = deg; rotSet = true; } else { rot += (deg - rot) * 0.18; }
+
+    // beak has to stay on screen when the bar is full
+    var x = Math.min(edge, W - 58 * fs);
+    var y = H/2 + pt.y * S - 7 * S;
+
+    falcon.setAttribute('transform',
+      'translate(' + x.toFixed(1) + ',' + y.toFixed(1) + ') rotate(' + rot.toFixed(1) + ') scale('
+      + fs.toFixed(3) + ') translate(' + (-BELLY_X) + ',' + (-BELLY_Y) + ')');
+
+    var a = (beat * 9).toFixed(1);
+    var up = 'rotate(' + (-a) + ',' + SHOULDER_X + ',' + SHOULDER_Y + ')';
+    var dn = 'rotate(' + a + ',' + SHOULDER_X + ',' + SHOULDER_Y + ')';
+    for(var i=0;i<wingsBack.length;i++)  wingsBack[i].setAttribute('transform', up);
+    for(var j=0;j<wingsFront.length;j++) wingsFront[j].setAttribute('transform', dn);
+  }
+
+  window.addEventListener('resize', function(){ layout(); draw(0); if(reduce) staticSparks(); });
+  window.addEventListener('scroll', readScroll, {passive:true});
+  layout(); readScroll();
+
+  if(reduce){
+    draw(0); staticSparks();
+  } else {
+    (function frame(ts){
+      var dt = Math.min(48, ts - (lastTs || ts)); lastTs = ts;
+      if(tipLit() && vel > 0.04 && dir > 0) emit(vel > 0.8 ? 3 : 1);
+      drawSparks(dt);
+      vel *= 0.93;
+      // the wings only work while the page is moving: the beat is driven
+      // entirely by scroll speed, and eases back to a glide once it stops
+      flap += dt * Math.min(vel, 1.8) * 0.017;
+      beatAmp += (Math.min(vel * 2.4, 1) - beatAmp) * 0.11;
+      draw(Math.sin(flap) * beatAmp);
+      requestAnimationFrame(frame);
+    })(performance.now());
+  }
+
+  /* =============================================================
+     QUOTE REQUEST
+
+     INTEGRATION POINT: set ENDPOINT to a handler that accepts a POST
+     of the quote object (Formspree, Cloudflare Pages Function, etc).
+     While it is empty the form still works: it hands the finished
+     message to the visitor's mail app, prefilled and addressed.
+     ============================================================= */
+  var ENDPOINT = '';
+  var TO_EMAIL = 'falcon@falconmobileservices.com';
+  var TO_SMS   = '+17608038620';
+
+  var msg = document.getElementById('q-msg');
+  function say(t, kind){ msg.textContent = t; msg.className = 'form-msg' + (kind ? ' ' + kind : ''); }
+  function val(id){ return (document.getElementById(id).value || '').trim(); }
+
+  function collect(){
+    var needs = [];
+    document.querySelectorAll('.checks input:checked').forEach(function(c){ needs.push(c.value); });
+    return {
+      name: val('q-name'), phone: val('q-phone'), email: val('q-email'),
+      where: val('q-where'), machine: val('q-machine'), needs: needs,
+      when: document.getElementById('q-when').value,
+      movable: document.getElementById('q-move').value,
+      detail: val('q-detail')
+    };
+  }
+
+  function validate(q){
+    document.querySelectorAll('.bad').forEach(function(e){ e.classList.remove('bad'); });
+    var bad = [];
+    if(!q.name)  bad.push('q-name');
+    if(!q.phone) bad.push('q-phone');
+    if(!q.detail) bad.push('q-detail');
+    if(bad.length){
+      bad.forEach(function(id){ document.getElementById(id).classList.add('bad'); });
+      document.getElementById(bad[0]).focus();
+      say('Add your name, a phone number, and a short description so Ted can call you back.', 'err');
+      return false;
+    }
+    return true;
+  }
+
+  function asText(q){
+    return [
+      'Quote request from ' + q.name,
+      'Phone: ' + q.phone,
+      q.email ? 'Email: ' + q.email : '',
+      'Location: ' + (q.where || 'not given'),
+      'Equipment: ' + (q.machine || 'not given'),
+      'Needs: ' + (q.needs.length ? q.needs.join(', ') : 'not specified'),
+      'Timing: ' + q.when,
+      'Movable: ' + q.movable,
+      '',
+      q.detail
+    ].filter(Boolean).join('\n');
+  }
+
+  document.getElementById('q-send').addEventListener('click', function(){
+    var q = collect();
+    if(!validate(q)) return;
+    var body = asText(q);
+    if(!ENDPOINT){
+      say('Opening your email app with the request filled in — press send there and it is on its way.');
+      window.location.href = 'mailto:' + TO_EMAIL
+        + '?subject=' + encodeURIComponent('Quote request — ' + (q.machine || q.name))
+        + '&body=' + encodeURIComponent(body);
+      return;
+    }
+    this.disabled = true; say('Sending…');
+    var self = this;
+    fetch(ENDPOINT, {method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify(q)})
+      .then(function(r){ if(!r.ok) throw new Error(r.status);
+        say('Request sent. Ted will call you back at ' + q.phone + '.', 'ok');
+        document.querySelectorAll('.fields input[type=text], .fields input[type=tel], .fields input[type=email], .fields textarea')
+          .forEach(function(f){ f.value = ''; });
+      })
+      .catch(function(){
+        say('That did not go through. Call or text 760-803-8620 instead.', 'err');
+      })
+      .then(function(){ self.disabled = false; });
+  });
+
+  document.getElementById('q-text').addEventListener('click', function(){
+    var q = collect();
+    if(!validate(q)) return;
+    var sep = /iPhone|iPad|Macintosh/.test(navigator.userAgent) ? '&' : '?';
+    say('Opening your messages app. Attach a photo of the problem before you send.');
+    window.location.href = 'sms:' + TO_SMS + sep + 'body=' + encodeURIComponent(asText(q));
+  });
+
+  document.querySelectorAll('.fields input, .fields textarea').forEach(function(f){
+    f.addEventListener('input', function(){
+      f.classList.remove('bad');
+      if(msg.classList.contains('err')) say('');
+    });
+  });
+})();
+</script>
+</body>
+</html>
