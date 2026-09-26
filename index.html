@@ -313,6 +313,10 @@ textarea{min-height:120px;resize:vertical;}
           <span class="what">Cell — fastest, texts welcome</span>
           <span class="num">928-352-6697</span>
         </a>
+        <a class="numrow" href="mailto:contact@fms-fix.com">
+          <span class="what">Email</span>
+          <span class="num">contact@fms-fix.com</span>
+        </a>
         <p class="fine">Serving <span data-fill="area">Chicagoland and surrounding areas</span>.
           On site <span data-fill="hours">Monday to Saturday, 7am to 6pm</span>, with emergency calls by arrangement.</p>
       </div>
@@ -501,7 +505,7 @@ textarea{min-height:120px;resize:vertical;}
 
         <aside class="quote-aside">
           <h3>Rather just call?</h3>
-          <p>Ted picks up the cell at <a href="tel:+17608038620">760-803-8620</a>. Photos sent by
+          <p>Ted picks up at <a href="tel:+19283526697">928-352-6697</a>. Photos sent by
             text usually save a trip.</p>
           <h3>What helps most</h3>
           <ul class="want">
@@ -535,7 +539,7 @@ textarea{min-height:120px;resize:vertical;}
         </div>
         <div>
           <h3>Email</h3>
-          <p><a href="mailto:contact@fms-fix.com.com" data-fill="email">contact@fms-fix.com.com</a></p>
+          <p><a href="mailto:contact@fms-fix.com">contact@fms-fix.com</a></p>
         </div>
         <div>
           <h3>Service area</h3>
@@ -775,8 +779,8 @@ textarea{min-height:120px;resize:vertical;}
      message to the visitor's mail app, prefilled and addressed.
      ============================================================= */
   var ENDPOINT = '';
-  var TO_EMAIL = 'falcon@falconmobileservices.com';
-  var TO_SMS   = '+17608038620';
+  var TO_EMAIL = 'contact@fms-fix.com';
+  var TO_SMS   = '+19283526697';
 
   var msg = document.getElementById('q-msg');
   function say(t, kind){ msg.textContent = t; msg.className = 'form-msg' + (kind ? ' ' + kind : ''); }
@@ -844,7 +848,7 @@ textarea{min-height:120px;resize:vertical;}
           .forEach(function(f){ f.value = ''; });
       })
       .catch(function(){
-        say('That did not go through. Call or text 760-803-8620 instead.', 'err');
+        say('That did not go through. Call or text 928-352-6697 instead.', 'err');
       })
       .then(function(){ self.disabled = false; });
   });
