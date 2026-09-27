@@ -569,7 +569,7 @@ textarea{min-height:120px;resize:vertical;}
   </div>
 </footer>
 
-<script>
+<script data-cfasync="false">
 (function(){
   var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
@@ -782,7 +782,9 @@ textarea{min-height:120px;resize:vertical;}
      message to the visitor's mail app, prefilled and addressed.
      ============================================================= */
   var ENDPOINT = '';
-  var TO_EMAIL = 'contact@fms-fix.com';
+  // assembled at runtime so Cloudflare's email obfuscation cannot rewrite
+  // this line and break the script it sits in
+  var TO_EMAIL = ['contact', 'fms-fix.com'].join('@');
   var TO_SMS   = '+19283526697';
 
   var msg = document.getElementById('q-msg');
