@@ -74,20 +74,17 @@ h1,h2,h3{font-family:var(--serif);font-weight:700;letter-spacing:-.01em;}
 
 /* ---------------- header ---------------- */
 .site-head{position:sticky;top:0;z-index:60;background:var(--paper);}
-/* three tracks so the brand sits dead centre whatever flanks it: the two
-   outer columns are equal, which pins the middle one to the middle */
 .head-row{
-  display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:16px;
+  display:flex;align-items:center;justify-content:space-between;gap:20px;
   height:var(--nav-h);
 }
-.head-row .site-nav{grid-column:1;justify-self:start;}
-.head-row .lockup{grid-column:2;justify-self:center;}
-.head-row .call-btn{grid-column:3;justify-self:end;}
+/* the name sits on the logo's centreline; all-caps serif reads a touch high
+   in a line box, so it takes a small nudge down to look level */
 .lockup{display:flex;align-items:center;gap:11px;text-decoration:none;}
 .lockup .mark{width:48px;height:33px;flex:none;display:block;}
 .lockup .name{
   font-family:var(--serif);font-weight:700;font-size:17px;line-height:1;
-  white-space:nowrap;letter-spacing:-.01em;
+  white-space:nowrap;letter-spacing:-.01em;position:relative;top:2px;
 }
 .site-nav{display:flex;align-items:center;gap:22px;}
 .site-nav a{
