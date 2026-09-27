@@ -74,18 +74,20 @@ h1,h2,h3{font-family:var(--serif);font-weight:700;letter-spacing:-.01em;}
 
 /* ---------------- header ---------------- */
 .site-head{position:sticky;top:0;z-index:60;background:var(--paper);}
+/* three tracks so the brand sits dead centre whatever flanks it: the two
+   outer columns are equal, which pins the middle one to the middle */
 .head-row{
-  display:flex;align-items:center;justify-content:space-between;gap:20px;
+  display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:16px;
   height:var(--nav-h);
 }
-.lockup{display:flex;align-items:center;gap:10px;text-decoration:none;}
+.head-row .site-nav{grid-column:1;justify-self:start;}
+.head-row .lockup{grid-column:2;justify-self:center;}
+.head-row .call-btn{grid-column:3;justify-self:end;}
+.lockup{display:flex;align-items:center;gap:11px;text-decoration:none;}
 .lockup .mark{width:48px;height:33px;flex:none;display:block;}
 .lockup .name{
-  font-family:var(--serif);font-weight:700;font-size:15px;line-height:1.05;
-}
-.lockup .sub{
-  display:block;font-family:var(--sans);font-weight:500;font-size:10.5px;
-  color:var(--ember);letter-spacing:.02em;margin-top:2px;
+  font-family:var(--serif);font-weight:700;font-size:17px;line-height:1;
+  white-space:nowrap;letter-spacing:-.01em;
 }
 .site-nav{display:flex;align-items:center;gap:22px;}
 .site-nav a{
@@ -98,7 +100,12 @@ h1,h2,h3{font-family:var(--serif);font-weight:700;letter-spacing:-.01em;}
   font-size:14.5px;padding:9px 16px;border-radius:2px;white-space:nowrap;
 }
 .call-btn:hover{background:#a11f15;}
-@media (max-width:760px){ .site-nav a{display:none;} }
+@media (max-width:900px){ .call-btn .call-num{display:none;} }
+@media (max-width:760px){
+  .site-nav a{display:none;}
+  .lockup .mark{width:40px;height:27px;}
+  .lockup .name{font-size:14px;}
+}
 
 /* ---------------- progress torch ---------------- */
 .torchbar{position:relative;height:var(--bar-h);width:100%;background:var(--paper);}
@@ -117,9 +124,6 @@ h1,h2,h3{font-family:var(--serif);font-weight:700;letter-spacing:-.01em;}
 .brandblock .big{
   font-family:var(--serif);font-weight:700;
   font-size:clamp(24px,4.4vw,40px);line-height:1.02;margin:0;
-}
-.brandblock .tag{
-  font-size:clamp(14px,1.9vw,19px);color:var(--ember);font-weight:500;margin:6px 0 0;
 }
 
 .hero h1{
@@ -254,9 +258,7 @@ textarea{min-height:120px;resize:vertical;}
   <div class="wrap head-row">
     <a class="lockup" href="#top">
       <svg class="mark" viewBox="0 0 150 102" style="color:var(--ink)" aria-hidden="true"><use href="#fms-mark"/></svg>
-      <span class="name">FALCON MOBILE SERVICES
-        <span class="sub">Fabrication and Welding</span>
-      </span>
+      <span class="name">FALCON MOBILE SERVICES</span>
     </a>
     <nav class="site-nav">
       <a href="#services">Services</a>
@@ -264,7 +266,7 @@ textarea{min-height:120px;resize:vertical;}
       <a href="#quote">Get a quote</a>
       <a href="#contact">Contact</a>
     </nav>
-    <a class="call-btn" href="tel:+19283526697">Call 928-352-6697</a>
+    <a class="call-btn" href="tel:+19283526697">Call<span class="call-num"> 928-352-6697</span></a>
   </div>
 
   <div class="torchbar" id="torchbar" role="progressbar" aria-label="Page progress"
@@ -294,7 +296,6 @@ textarea{min-height:120px;resize:vertical;}
           <svg class="mark" viewBox="0 0 150 102" style="color:var(--ink)" aria-label="Falcon Mobile Services"><use href="#fms-mark"/></svg>
           <div class="words">
             <p class="big">FALCON MOBILE SERVICES</p>
-            <p class="tag">Fabrication and Welding</p>
           </div>
         </div>
         <h1>Your equipment breaks where it sits. We bring the shop to it.</h1>
