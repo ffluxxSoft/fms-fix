@@ -229,10 +229,6 @@ textarea{min-height:120px;resize:vertical;}
 .foot-note{font-size:13px;color:#8A857B;}
 .foot-promo{font-size:13px;color:#8A857B;text-decoration:none;}
 
-@media (prefers-reduced-motion:reduce){
-  html{scroll-behavior:auto;}
-  *{transition:none !important;}
-}
 </style>
 </head>
 <body>
@@ -571,7 +567,6 @@ textarea{min-height:120px;resize:vertical;}
 
 <script data-cfasync="false">
 (function(){
-  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
   /* =============================================================
      THE TORCH PROGRESS BAR
@@ -712,20 +707,6 @@ textarea{min-height:120px;resize:vertical;}
     sparkG.innerHTML = out.join('');
   }
 
-  function staticSparks(){
-    var t = tipPoint(), out = [];
-    if(tipLit()){
-      var ang = [0.30, 0.52, 0.78, 1.00, 0.22, 0.66];
-      for(var i=0;i<ang.length;i++){
-        var a = ang[i] * Math.PI, L = (10 + i*3) * S / 0.82, sgn = i % 2 ? -1 : 1;
-        out.push('<path d="M ' + (t.x + Math.cos(a)*4*sgn).toFixed(1) + ' ' + (t.y + Math.sin(a)*4).toFixed(1)
-          + ' L ' + (t.x + Math.cos(a)*L*sgn).toFixed(1) + ' ' + (t.y + Math.sin(a)*L).toFixed(1)
-          + '" stroke="' + EMBER + '" stroke-width="' + (1.7*S/0.82).toFixed(2) + '" stroke-linecap="round"/>');
-      }
-    }
-    sparkG.innerHTML = out.join('');
-  }
-
   var rot = 0, rotSet = false;
 
   function draw(beat){
@@ -752,36 +733,22 @@ textarea{min-height:120px;resize:vertical;}
     for(var j=0;j<wingsFront.length;j++) wingsFront[j].setAttribute('transform', dn);
   }
 
-  window.addEventListener('resize', function(){ layout(); draw(0); if(reduce) staticSparks(); });
+  window.addEventListener('resize', function(){ layout(); draw(0); });
   window.addEventListener('scroll', readScroll, {passive:true});
   layout(); readScroll();
 
-  if(reduce){
-    /* No animation loop here, but the bar is a progress indicator and still
-       has to track the page. Repaint on scroll instead, throttled to a frame,
-       with the wings at rest and the sparks static. Without this the torch
-       was drawn once at zero progress and never again, so the whole bar sat
-       empty for anyone with reduced motion turned on. */
-    var pendingPaint = false;
-    var repaint = function(){ pendingPaint = false; draw(0); staticSparks(); };
-    window.addEventListener('scroll', function(){
-      if(!pendingPaint){ pendingPaint = true; requestAnimationFrame(repaint); }
-    }, {passive:true});
-    repaint();
-  } else {
-    (function frame(ts){
-      var dt = Math.min(48, ts - (lastTs || ts)); lastTs = ts;
-      if(tipLit() && vel > 0.04 && dir > 0) emit(vel > 0.8 ? 3 : 1);
-      drawSparks(dt);
-      vel *= 0.93;
-      // the wings only work while the page is moving: the beat is driven
-      // entirely by scroll speed, and eases back to a glide once it stops
-      flap += dt * Math.min(vel, 1.8) * 0.017;
-      beatAmp += (Math.min(vel * 2.4, 1) - beatAmp) * 0.11;
-      draw(Math.sin(flap) * beatAmp);
-      requestAnimationFrame(frame);
-    })(performance.now());
-  }
+  /* One loop, every browser. The bird's wings and the sparks are both driven
+     by scroll speed, so nothing moves while the page is still. */
+  (function frame(ts){
+    var dt = Math.min(48, ts - (lastTs || ts)); lastTs = ts;
+    if(tipLit() && vel > 0.04 && dir > 0) emit(vel > 0.8 ? 3 : 1);
+    drawSparks(dt);
+    vel *= 0.93;
+    flap += dt * Math.min(vel, 1.8) * 0.017;
+    beatAmp += (Math.min(vel * 2.4, 1) - beatAmp) * 0.11;
+    draw(Math.sin(flap) * beatAmp);
+    requestAnimationFrame(frame);
+  })(performance.now());
 
   /* =============================================================
      QUOTE REQUEST
